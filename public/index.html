@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <title>NETWORK CONVERSATION</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-3">NETWORK CONVERSATION</h1>
+    
+    <form id="ipForm" onchange="handleSubmit()">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">IP</th>
+            <th scope="col">ON</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            for(let i = 0; i < 10; i++) {
+              document.write(`
+                <tr>
+                  <td><input type="text" class="form-control ip" placeholder="Enter IP"></td>
+                  <td><input type="checkbox" class="form-check-input state"></td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+      
+      <div class="form-group">
+        <label for="thingsToSay">Things To Say</label>
+        <textarea class="form-control" id="thingsToSay" rows="3">ho, yes</textarea>
+      </div>
+      <div class="form-group">
+        <label for="probability">Probability of my Participation in Network</label>
+        <input type="range" class="custom-range" min="1" max="100" id="probability" oninput="updateProbValue(this.value)">
+        <p id="probValue">50%</p>
+      </div>
+      <div class="form-group">
+        <label for="responseFastness">Response Fastness</label>
+        <input type="range" class="custom-range" min="1" max="2000" id="responseFastness" oninput="updateSliderValue(this.value)">
+        <p id="sliderValue">1000 ms</p>
+      </div>
+    </form>
+  </div>
+
+  <script src="bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
